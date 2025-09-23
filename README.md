@@ -4,4 +4,4 @@ Repositorio utilizado para documentar el funcionamiento del sistema contaportabl
 
 # Facturación Dual
 
-En este apartado se describe el funcionamiento para los múltiples formatos de facturación
+En este apartado se describe el funcionamiento para los múltiples formatos de facturacióndfd
