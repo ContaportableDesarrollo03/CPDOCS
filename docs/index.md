@@ -1,19 +1,30 @@
-# Welcome to MkDocs
+# CP2025 — Documentación
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+> Contaportable/CP2025 — App de escritorio en **Visual FoxPro 9.0** con control de versiones en **GitHub** y conversión binario⇄texto mediante **foxbin2prg**.
 
-## Commands
+!!! tip "Lectura rápida"
+    - **Repo:** [YECAPP/CP2025](https://github.com/YECAPP/CP2025)  
+    - **Rama de trabajo:** `DESARROLLO` · **Releases:** `main`  
+    - **Conversión:** bin→texto antes de *push*, texto→bin después de *pull*
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## ¿Qué es CP2025?
+Software contable y de facturación. El código principal está en Visual FoxPro 9.0; para poder versionar en Git se convierten los binarios (formularios/clases/reportes) a texto con **foxbin2prg**.
 
-## Project layout
+## Formatos de archivos
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+| Binario (VFP) | Texto (foxbin2prg) | Descripción                                    |
+| --- | --- | --- |
+| `.vcx` | `.vc2` | Clases |
+| `.scx` | `.sc2` | Formularios |
+| `.frx` | `.fr2` | Reportes |
+| `.prg` | `.prg` | Código (ya es texto) |
 
-## Prueba de cambio
+## Flujo de ramas
+- **`DESARROLLO`**: rama principal de trabajo.
+- **`main`**: se usa para publicar **releases** estables.
+
+### Enlaces útiles
+
+1.  Contaportable.com :  
+        1.  Descarga: https://www.contaportable.com/vip/public/descargas/  
+        2.  Membresía: https://www.contaportable.com/vip/public/login
