@@ -15,20 +15,33 @@ theme:
         name: Dark mode
       primary: blue
       accent: orange
-    
-  logo: assets\logo.png
-  favicon: assets\favicon.png
+  features:
+    - navigation.footer
+  icon: 
+    repo: fontawesome/brands/gitkraken
+
+  logo: "assets/logo.png"
+  favicon: "assets/favicon.png"
+
+repo_url: https://github.com/YECAPP/CPDOCS
+repo_name: YECAPP/CPDOCS
 
 markdown_extensions:
 - admonition
 - pymdownx.details
 - pymdownx.superfences
+- attr_list
+- md_in_html
+- pymdownx.blocks.caption
 
 - pymdownx.superfences:
     custom_fences:
       - name: mermaid
         class: mermaid
         format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - glightbox
 
 extra:
   social:

@@ -8,8 +8,8 @@ Se explica uso y organización de reportes en **contaportable**.
 2. Contiene dos clases principales: Reportes.
 
 ??? note "Clases Statement contenidas en DefineReport.prg"
-    1. StatementSTM :Reportes de sistema.
-    2. StatementINV: Reportes de Inventario. 
+    1. StatementSTM: Reportes de sistema.
+    2. StatementINV: [Reportes de inventario] (categorias/Inventario.md)
     3. StatementCLI: Reportes de cliente.
     4. StatementIVA: Reportes de iva.
     5. StatementReportListener: Actúa como controlador de errores

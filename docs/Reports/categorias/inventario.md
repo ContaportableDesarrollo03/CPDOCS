@@ -39,9 +39,8 @@ Este documento reúne los cambios detectados en los reportes del sistema **Conta
 ### Existencias
 - **Enlace en sitio ContaPortable:**  
   `https://www.contaportable.com/indice/vip-modulo-contable-reportes-contables/reporte-inventario-y-facturacion/#existencia`
-- **Video (Loom):** https://www.loom.com/i/2923b87f52b04e23bdd794f6da78bea2
+- **Imagen (Loom):** ![Imagen en Loom](https://www.loom.com/i/bba93a2b362447d48aa465a97ff22527){ align=left }
 
----
 
 ## Nuevos reportes de inventario (no publicados aún en el sitio)
 
