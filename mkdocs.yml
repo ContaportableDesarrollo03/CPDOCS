@@ -2,3 +2,39 @@ site_name: Documentación de ContaPortable
 site_url: https://contaportabledesarrollo03.github.io/CPDOCS
 theme:
   name: material
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Light mode
+      primary: orange
+      accent: blue
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Dark mode
+      primary: blue
+      accent: orange
+    
+  logo: assets\logo.png
+  favicon: assets\favicon.png
+
+markdown_extensions:
+- admonition
+- pymdownx.details
+- pymdownx.superfences
+
+- pymdownx.superfences:
+    custom_fences:
+      - name: mermaid
+        class: mermaid
+        format: !!python/name:pymdownx.superfences.fence_code_format
+
+extra:
+  social:
+    - icon: simple/youtube
+      link: https://youtube.com/contaportable
+    - icon: simple/facebook
+      link: https://facebook.com/contaportable
+
+copyright: Copyright &copy; 2025 ContaPortable - Yuri Ernesto Calderón Rodríguez
