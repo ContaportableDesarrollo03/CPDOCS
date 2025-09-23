@@ -1,0 +1,4 @@
+site_name: Documentación de ContaPortable
+site_url: https://contaportabledesarrollo03.github.io/CPDOCS
+theme:
+  name: material
