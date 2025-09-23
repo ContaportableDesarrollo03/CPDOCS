@@ -24,7 +24,7 @@ theme:
   favicon: "assets/favicon.png"
 
 repo_url: https://github.com/YECAPP/CPDOCS
-repo_name: YECAPP/CPDOCS
+repo_name: Documentación de ContaPortable
 
 markdown_extensions:
 - admonition
@@ -33,6 +33,7 @@ markdown_extensions:
 - attr_list
 - md_in_html
 - pymdownx.blocks.caption
+- pymdownx.keys # Para dibjujar teclas
 
 - pymdownx.superfences:
     custom_fences:
@@ -42,6 +43,7 @@ markdown_extensions:
 
 plugins:
   - glightbox
+  - search
 
 extra:
   social:

@@ -1,45 +1,39 @@
 ---
 title: Reportes de inventario — ContaPortable
-description: Resumen de cambios y nuevos reportes del sistema ContaPortable (referencias a sitio web y Loom). 
+description: Resumen de categorías de reportes de inventario incluídos en ContaPortable. 
+---
 ---
 
 # Reportes de inventario
 
-> Documento fuente: *Cambios en reportes.docx*. :contentReference[oaicite:1]{index=1}
+Esta página reúne el detalle de los reportes incluídos en la categoría de inventario en el sistema **ContaPortable**, comparándolos con las referencias públicas actuales del sitio web y mostrando enlaces a los videos explicativos (Loom).
 
-Este documento reúne los cambios detectados en los reportes del sistema **ContaPortable**, comparándolos con las referencias públicas actuales del sitio web y mostrando enlaces a los videos explicativos (Loom).
+<!-- Se agrega el código mermaid para diagramar  -->
+``` mermaid
+graph TD
+  A[Reportes de inventario]:::root
 
----
+  subgraph "Subcategorías"
+    B[1. Movimientos]
+    C[2. Documentos de inventario]
+    D[3. Inventario costeado]
+    E[4. Por marca y modelo]
+  end
 
-## Reportes de IVA
+  A --> B
+  A --> C
+  A --> D
+  A --> E
 
-### Libro IVA de ventas al consumidor
-- **Enlace en sitio ContaPortable:**  
-  link: `https://www.contaportable.com/vip-modulo-contable-reportes-contables/reportes-iva/#liVeCo`
-- **Video (Loom):** https://www.loom.com/i/bba93a2b362447d48aa465a97ff22527
+``` 
 
----
-
-### Libro IVA de ventas al contribuyente
-- **Enlace en sitio ContaPortable:**  
-  `https://www.contaportable.com/vip-modulo-contable-reportes-contables/reportes-iva/#liVeCon`
-- **Video (Loom):** https://www.loom.com/i/cd545cde9e9f4e468e86307bdd6dddb6
-
----
-
-### Libro de IVA de Compras
-- **Enlace en sitio ContaPortable:**  
-  `https://www.contaportable.com/indice/vip-modulo-contable-reportes-contables/reportes-iva/#liCom`
-- **Video (Loom):** https://www.loom.com/i/c99717ab26304d8aaa03c3181f247d14
-
----
 
 ## Reportes de Inventario
 
 ### Existencias
 - **Enlace en sitio ContaPortable:**  
   `https://www.contaportable.com/indice/vip-modulo-contable-reportes-contables/reporte-inventario-y-facturacion/#existencia`
-- **Imagen (Loom):** ![Imagen en Loom](https://www.loom.com/i/bba93a2b362447d48aa465a97ff22527){ align=left }
+- **Imagen (Loom):** ![Reporte de existencias](https://cdn.loom.com/images/originals/bfa2b560c45e49f185aac2d01cdb5a4c.jpg?Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4ubG9vbS5jb20vaW1hZ2VzL29yaWdpbmFscy9iZmEyYjU2MGM0NWU0OWYxODVhYWMyZDAxY2RiNWE0Yy5qcGciLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3NTg3NTMyNzh9fX1dfQ__&Key-Pair-Id=APKAJQIC5BGSW7XXK7FQ&Signature=Svb1nxLiY~7Rojpfp2V31OMc3B~AFkb85FFEzPS-koUmmhKSLrZT~fRwqFJfkIN6SBY~Qu5UNB~2C-KeeltPgbam1NsKc1~oQYFFwsJJMUwNyV9NP7751VZpE3EVgsG~Mr~d7NvA3xhD~I7RUBcaEBocpmsnKmt5t9wx7SBTAXcOdVZvqdmJMlUKgSKuC~zLgdh0INTXqdAKUrerl2qiZsQJXHmhijOkbEHdNlTadwjLoA-u8QuQU2zez-xj05ovXH4e1zuqWw8uU1kHWIxgsubSlP3WbcefETQqCB2KIF-xUMfehINjGfpH1sHA6A2-dSbEAxhKcb9JX0ihprKaDw__){ align=left }
 
 
 ## Nuevos reportes de inventario (no publicados aún en el sitio)
