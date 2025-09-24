@@ -6,13 +6,13 @@ theme:
     - scheme: default
       toggle:
         icon: material/weather-night
-        name: Light mode
+        name: Dark mode
       primary: orange
       accent: blue
     - scheme: slate
       toggle:
         icon: material/weather-sunny
-        name: Dark mode
+        name: Light mode
       primary: blue
       accent: orange
   features:
