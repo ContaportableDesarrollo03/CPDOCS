@@ -5,13 +5,13 @@ theme:
   palette:
     - scheme: default
       toggle:
-        icon: material/weather-sunny
+        icon: material/weather-night
         name: Light mode
       primary: orange
       accent: blue
     - scheme: slate
       toggle:
-        icon: material/weather-night
+        icon: material/weather-sunny
         name: Dark mode
       primary: blue
       accent: orange
@@ -31,19 +31,22 @@ markdown_extensions:
 - pymdownx.details
 - pymdownx.superfences
 - attr_list
+- pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg # Base de datos de emojis
 - md_in_html
 - pymdownx.blocks.caption
-- pymdownx.keys # Para dibujar teclas
+- pymdownx.keys # Para dibujar teclas dentro de las páginas
 
 - pymdownx.superfences:
     custom_fences:
-      - name: mermaid
+      - name: mermaid  # Sirve para implementar diagramas por medio de sintaxis Mermaid
         class: mermaid
         format: !!python/name:pymdownx.superfences.fence_code_format
 
 plugins:
-  - glightbox
-  - search
+  - glightbox  # Plugin para manejar imágenes con zoom
+  - search     # Plugin de búsqueda
 
 extra:
   social:
