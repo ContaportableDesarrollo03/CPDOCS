@@ -1,0 +1,2438 @@
+<!DOCTYPE html><html lang="es" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación del proyecto CP2025 (Visual FoxPro 9.0 + foxbin2prg)">
+      
+      
+      
+        <link rel="canonical" href="https://yecapp.github.io/CPDOCS/modulos/DOCS_Dashboard_Ejecutivo/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Dashboard Ejecutivo — Documento de Arquitectura y Flujo - CP2025 Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#dashboard-ejecutivo-documento-de-arquitectura-y-flujo" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../.." title="CP2025 Docs" class="md-header__button md-logo" aria-label="CP2025 Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CP2025 Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Dashboard Ejecutivo — Documento de Arquitectura y Flujo
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="blue" aria-label="Dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="orange" aria-label="Light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/YECAPP/CPDOCS" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M557.7 118.1c-2.3-6.1-9.3-9.2-15.3-6.6-5.7 2.4-8.5 8.9-6.3 14.6 10.9 29 16.9 60.5 16.9 93.3 0 134.6-100.3 245.7-230.2 262.7V358.4c7.9-1.5 15.5-3.6 23-6.2v104c106.7-25.9 185.9-122.1 185.9-236.8 0-91.8-50.8-171.8-125.8-213.3-5.7-3.2-13-.9-15.9 5-2.7 5.5-.6 12.2 4.7 15.1 67.9 37.6 113.9 110 113.9 193.2 0 93.3-57.9 173.1-139.8 205.4v-92.2c14.2-4.5 24.9-17.7 24.9-33.5 0-13.1-6.8-24.4-17.3-30.5 8.3-79.5 44.5-58.6 44.5-83.9V170c0-38-87.9-161.8-129-164.7-2.5-.2-5-.2-7.6 0C243.1 8.3 155.2 132 155.2 170v14.8c0 25.3 36.3 4.3 44.5 83.9-10.6 6.1-17.3 17.4-17.3 30.5 0 15.8 10.6 29 24.8 33.5v92.2c-81.9-32.2-139.8-112-139.8-205.4 0-83.1 46-155.5 113.9-193.2 5.4-3 7.4-9.6 4.7-15.1-2.9-5.9-10.1-8.2-15.9-5-75 41.5-125.8 121.5-125.8 213.3 0 114.7 79.2 210.8 185.9 236.8v-104c7.6 2.5 15.1 4.6 23 6.2v123.7C123.4 465.2 23 354.1 23 219.5c0-32.8 6-64.3 16.9-93.3 2.2-5.8-.6-12.2-6.3-14.6-6-2.6-13 .4-15.3 6.6C6.5 149.7 0 183.8 0 219.5c0 155.1 122.6 281.6 276.3 287.8V361.4c6.8.4 15 .5 23.4 0v145.8C453.4 501.1 576 374.6 576 219.5c0-35.7-6.5-69.8-18.3-101.4M357.9 322.9a23.7 23.7 0 1 1 0-47.4 23.7 23.7 0 1 1 0 47.4m-139.8-47.5a23.7 23.7 0 1 1 0 47.4 23.7 23.7 0 1 1 0-47.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    Documentación de ContaPortable
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="CP2025 Docs" class="md-nav__button md-logo" aria-label="CP2025 Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    CP2025 Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/YECAPP/CPDOCS" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M557.7 118.1c-2.3-6.1-9.3-9.2-15.3-6.6-5.7 2.4-8.5 8.9-6.3 14.6 10.9 29 16.9 60.5 16.9 93.3 0 134.6-100.3 245.7-230.2 262.7V358.4c7.9-1.5 15.5-3.6 23-6.2v104c106.7-25.9 185.9-122.1 185.9-236.8 0-91.8-50.8-171.8-125.8-213.3-5.7-3.2-13-.9-15.9 5-2.7 5.5-.6 12.2 4.7 15.1 67.9 37.6 113.9 110 113.9 193.2 0 93.3-57.9 173.1-139.8 205.4v-92.2c14.2-4.5 24.9-17.7 24.9-33.5 0-13.1-6.8-24.4-17.3-30.5 8.3-79.5 44.5-58.6 44.5-83.9V170c0-38-87.9-161.8-129-164.7-2.5-.2-5-.2-7.6 0C243.1 8.3 155.2 132 155.2 170v14.8c0 25.3 36.3 4.3 44.5 83.9-10.6 6.1-17.3 17.4-17.3 30.5 0 15.8 10.6 29 24.8 33.5v92.2c-81.9-32.2-139.8-112-139.8-205.4 0-83.1 46-155.5 113.9-193.2 5.4-3 7.4-9.6 4.7-15.1-2.9-5.9-10.1-8.2-15.9-5-75 41.5-125.8 121.5-125.8 213.3 0 114.7 79.2 210.8 185.9 236.8v-104c7.6 2.5 15.1 4.6 23 6.2v123.7C123.4 465.2 23 354.1 23 219.5c0-32.8 6-64.3 16.9-93.3 2.2-5.8-.6-12.2-6.3-14.6-6-2.6-13 .4-15.3 6.6C6.5 149.7 0 183.8 0 219.5c0 155.1 122.6 281.6 276.3 287.8V361.4c6.8.4 15 .5 23.4 0v145.8C453.4 501.1 576 374.6 576 219.5c0-35.7-6.5-69.8-18.3-101.4M357.9 322.9a23.7 23.7 0 1 1 0-47.4 23.7 23.7 0 1 1 0 47.4m-139.8-47.5a23.7 23.7 0 1 1 0 47.4 23.7 23.7 0 1 1 0-47.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    Documentación de ContaPortable
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Clases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1">
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bancos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bancos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../bancos/Conciliacionbancaria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conciliación Bancaria
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Factura
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Factura
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../facturacion/facturacion_dual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../facturacion/facturacion_lineas_multiples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multilínea
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../facturacion/personalizar_secuencia_gen_dte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personalizar secuencia de generación DTE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../facturacion/importar_clientes_desde_plantilla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importar Clientes y Facturas desde plantilla Excel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_5">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configurar links de Pago
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configurar links de Pago
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../facturacion/linksPago/wompi/linkPagoWompi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wompi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../facturacion/gestion_cuentas_por_cobrar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestión de CXC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../facturacion/configMultiProvEmail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configurar Email para envio de DTE o cotización
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3">
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compras
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compras
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compras/gestion_cuentas_por_pagar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestión de CXP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4">
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventario
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inventario
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventario/FamiliaInventario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestión de familias de inventario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventario/GastosImportacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gastos de Importación (OEC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventario/Retaceo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retaceos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5">
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contabilidad
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contabilidad
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contabilidad/ReportesContables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reportes Contables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6">
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reportes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reportes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reports/reportes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_2" id="__nav_2_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clientes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Clientes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reports/categorias/clientes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reportes de clientes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reports/categorias/CLI1H/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaz de gestión y envío de avisos de cobro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reports/categorias/inventario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Reports/categorias/impuestos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Impuestos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7">
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Informes(Anexos)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Informes(Anexos)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Informes_anexos/anexos_f07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    F07
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_7_2" id="__nav_2_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    F14
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    F14
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Informes_anexos/anexos_f14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anexo de retenciones de renta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Informes_anexos/anexos_f14Q25/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anexo de pago de quincena 25
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8">
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Planillas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Planillas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../planillas/planillas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Módulo de planillas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../planillas/planillas_Q25/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quincena 25
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9">
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parametros en Contaportable
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parametros en Contaportable
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Parametros/Modulos/Facturaci%C3%B3n/ParametrosEnFacturacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Facturación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Parametros/Modulos/Informes_anexos/ParametrosEnAnexos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Informes Anexos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#1-resumen-ejecutivo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Resumen Ejecutivo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-arquitectura-antes-vs-ahora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Arquitectura: Antes vs. Ahora
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. Arquitectura: Antes vs. Ahora">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-enfoque-anterior-dashboardsc2-utility1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 Enfoque anterior (Dashboard.sc2 + Utility1)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-enfoque-nuevo-definedashboardmanagerprg" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Enfoque nuevo (defineDashboardManager.prg)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-flujo-completo-paso-a-paso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Flujo Completo Paso a Paso
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Flujo Completo Paso a Paso">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-inicializacion-init-del-formulario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Inicialización (Init del formulario)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-carga-del-dashboard-sidebarclick-dashboard-o-pgdashboardactivate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Carga del Dashboard (SideBarClick → "Dashboard" o pgDashboard.Activate)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-drag-and-drop-de-tarjetas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Drag-and-Drop de Tarjetas
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-persistencia-savelayout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Persistencia (SaveLayout)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-filtro-por-mesano" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Filtro por Mes/Año
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-click-en-tarjeta-detalle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 Click en Tarjeta → Detalle
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-los-12-kpis-del-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Los 12 KPIs del Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-integracion-con-json-y-persistencia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Integración con JSON y Persistencia
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-por-que-este-enfoque-es-superior" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Por Qué Este Enfoque es Superior
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-ideas-para-mejoras-futuras" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Ideas para Mejoras Futuras
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Ideas para Mejoras Futuras">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#71-corto-plazo-proximas-semanas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.1 Corto Plazo (próximas semanas)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#72-mediano-plazo-1-2-meses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.2 Mediano Plazo (1-2 meses)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#73-largo-plazo-3-meses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7.3 Largo Plazo (3+ meses)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-resumen-tecnico-para-ti" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Resumen Técnico para TI
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="dashboard-ejecutivo-documento-de-arquitectura-y-flujo">Dashboard Ejecutivo — Documento de Arquitectura y Flujo</h1>
+<blockquote>
+<p><strong>Fecha:</strong> Marzo 2026<br>
+<strong>Proyecto:</strong> Resumen Facturas — Módulo Dashboard<br>
+<strong>Archivos clave:</strong><br>
+- <code>PRGS/defineDashboardManager.prg</code> — clase gestora (<code>yDashboardManager</code> + <code>yKPICard</code>)<br>
+- <code>FORMS/resumenfacturas.scx</code> — formulario principal (binario VFP9)<br>
+- <code>FORMS/resumenfacturas.sc2</code> — fuente texto (FoxBin2PRG)</p>
+</blockquote>
+<hr>
+<h2 id="1-resumen-ejecutivo">1. Resumen Ejecutivo</h2>
+<p>El módulo Dashboard Ejecutivo muestra <strong>12 indicadores clave (KPI)</strong> del negocio en tarjetas visuales interactivas dentro del formulario principal de la aplicación. Los usuarios pueden:</p>
+<ul>
+<li>Ver de un vistazo ventas, cobros, compras, gastos, nómina, inventario y más.</li>
+<li><strong>Filtrar por mes y año</strong> con combos en la barra de herramientas.</li>
+<li><strong>Arrastrar y reorganizar</strong> las tarjetas libremente (drag-and-drop nativo VFP9).</li>
+<li><strong>Hacer click en cualquier tarjeta</strong> para ver el detalle expandido con grid de datos.</li>
+<li>Imprimir o exportar a Excel el detalle de cada indicador.</li>
+<li>Las posiciones se <strong>guardan automáticamente</strong> por usuario al cerrar el formulario.</li>
+</ul>
+<hr>
+<h2 id="2-arquitectura-antes-vs-ahora">2. Arquitectura: Antes vs. Ahora</h2>
+<h3 id="21-enfoque-anterior-dashboardsc2-utility1">2.1 Enfoque anterior (Dashboard.sc2 + Utility1)</h3>
+<div class="highlight"><pre><span></span><code>┌──────────────────────────────┐
+│  Dashboard.sc2 (Formulario)  │
+│   └── Pageframe1             │
+│        └── Page1             │
+│             └── Utility1     │  ← Objeto visual de indices.vcx
+│                  ├── GetWidgets()    │
+│                  ├── GetDashboard()  │  Lectura PARAMETROS
+│                  ├── SavePosition()  │  Escritura PARAMETROS
+│                  ├── AddWidget()     │
+│                  └── Arrange()       │
+│                                      │
+│  Tipo de widgets: "boxinfo",         │
+│  "graph_cnconta" (del mismo VCX)     │
+└──────────────────────────────┘
+</code></pre></div>
+<p><strong>Limitaciones:</strong>
+- Dependencia directa de <code>indices.vcx</code> — cualquier cambio en la librería afecta al dashboard.
+- Los widgets son clases visuales pesadas ("boxinfo", "graph_cnconta") definidas en el VCX.
+- El formato de persistencia es un string plano <code>"W:200,H:150,L:10,T:20,Chart:5"</code> parseado con <code>ArrayFromList2.prg</code>.
+- No se puede usar el dashboard en formularios que no tengan Utility1 en diseño.</p>
+<h3 id="22-enfoque-nuevo-definedashboardmanagerprg">2.2 Enfoque nuevo (defineDashboardManager.prg)</h3>
+<div class="highlight"><pre><span></span><code>┌──────────────────────────────────────┐
+│  resumenfacturas.scx (Formulario)    │
+│   ├── CntDashboardMain (Height=36)   │  ← Barra: título + combos + refresh
+│   ├── Pageframe1                     │
+│   │    └── Page1                     │  ← Área de tarjetas KPI
+│   │         ├── yKPICard_1           │
+│   │         ├── yKPICard_2           │
+│   │         └── ...yKPICard_12       │
+│   └── CntDashboardDetail            │  ← Panel detalle (oculto por defecto)
+│                                      │
+│  oDashboardManager (propiedad form)  │  ← Instancia de yDashboardManager
+│    (defineDashboardManager.prg)       │
+│    ├── LoadDashboard()               │
+│    ├── BuildKPICards()               │
+│    ├── SaveLayout()                  │
+│    ├── ApplyMonthYearFilter()        │
+│    ├── ArrangeCards()                │
+│    ├── ShowDetail() / HideDetail()   │
+│    └── PrepareContainers()           │
+└──────────────────────────────────────┘
+</code></pre></div>
+<p><strong>Ventajas:</strong>
+1. <strong>Cero dependencias externas</strong> — no necesita Utility1, ni indices.vcx, ni clases del VCX.
+2. <strong>Un solo archivo PRG</strong> contiene toda la lógica del dashboard (~560 líneas).
+3. <strong>Reutilizable</strong> — se puede instanciar en cualquier formulario con un Pageframe.
+4. <strong>Tarjetas livianas</strong> (yKPICard) — contenedores puros de VFP9, sin OLE ni ActiveX.
+5. <strong>Persistencia directa</strong> vía <code>_Screen.YoApp1.GetParam/SetParam</code> (misma infraestructura existente).
+6. <strong>Drag-and-drop nativo</strong> con <code>DragMode=1</code> + <code>Page1.DragOver</code>, sin BINDEVENT manual.</p>
+<hr>
+<h2 id="3-flujo-completo-paso-a-paso">3. Flujo Completo Paso a Paso</h2>
+<h3 id="31-inicializacion-init-del-formulario">3.1 Inicialización (Init del formulario)</h3>
+<div class="highlight"><pre><span></span><code>Init → AddProperty('oDashboardManager') 
+     → NEWOBJECT('yDashboardManager', 'PRGS\defineDashboardManager.prg', .NULL., ThisForm)
+</code></pre></div>
+<p>El manager almacena una referencia a <code>ThisForm</code> y queda listo para operar.</p>
+<h3 id="32-carga-del-dashboard-sidebarclick-dashboard-o-pgdashboardactivate">3.2 Carga del Dashboard (SideBarClick → "Dashboard" o pgDashboard.Activate)</h3>
+<div class="highlight"><pre><span></span><code>controller('SideBarClick') → oDashboardManager.LoadDashboard(.T.)
+                                ├── PrepareContainers()
+                                │     ├── CntBancos.Visible = .F.
+                                │     ├── CntDashboardDetail.Visible = .F.
+                                │     ├── CntDashboardMain.Height = 36  (toolbar)
+                                │     └── Pageframe1.Visible = .T., Top=36
+                                │
+                                ├── FillDashboardMonthYear()
+                                │     └── model('FillDashboardMonthYear')
+                                │         → Llena combos cmbDashboardMes y cmbDashboardAnio
+                                │
+                                ├── GetDashboardData()
+                                │     └── model('GetDashboardData', mes, año)
+                                │         → 12 consultas SQL a la BD
+                                │         → Genera cursor: curDashboardKPI
+                                │           (IdIndicador, Titulo, Valor, Descripcion, ColorR/G/B)
+                                │
+                                ├── BuildKPICards(Page1)
+                                │     ├── Limpia tarjetas anteriores (RemoveObject)
+                                │     ├── Para cada registro de curDashboardKPI:
+                                │     │   ├── Crea yKPICard con NEWOBJECT
+                                │     │   ├── Restaura posición guardada (GetParam)
+                                │     │   └── Si no hay posición → layout automático 3 columnas
+                                │     └── Cada yKPICard ya tiene DragMode=1
+                                │
+                                └── UpdateTitle()
+                                      └── lblDashboardTitle.Caption = "Dashboard - Mes Año"
+</code></pre></div>
+<h3 id="33-drag-and-drop-de-tarjetas">3.3 Drag-and-Drop de Tarjetas</h3>
+<div class="highlight"><pre><span></span><code>Usuario arrastra yKPICard
+  → VFP9 dispara DragMode=1 automáticamente
+  → Page1.DragOver (ya existe en el form)
+      ├── Lee oSource.xadjust, oSource.yadjust (centrar el cursor)
+      ├── Calcula nueva posición = nXCoord - xadjust
+      └── Mueve oSource.Left, oSource.Top
+</code></pre></div>
+<p>No requiere BINDEVENT, MouseDown, MouseMove, MouseUp. VFP9 maneja todo nativamente.</p>
+<h3 id="34-persistencia-savelayout">3.4 Persistencia (SaveLayout)</h3>
+<div class="highlight"><pre><span></span><code>QueryUnload → oDashboardManager.SaveLayout()
+                ├── Para cada yKPICard en Page1:
+                │     key = "DashCardPos_[nKPIId]"
+                │     value = "Left,Top"
+                │     → SetParam(key, value)
+                └── Los parámetros se guardan en tabla PARAMETROS
+</code></pre></div>
+<p>Al reabrir, <code>BuildKPICards</code> lee los mismos parámetros con <code>GetParam</code> y restaura posiciones.</p>
+<h3 id="35-filtro-por-mesano">3.5 Filtro por Mes/Año</h3>
+<div class="highlight"><pre><span></span><code>Usuario cambia combo → InteractiveChange
+  → controller('DashboardMonthYearChange')
+    → oDashboardManager.ApplyMonthYearFilter()
+        ├── Lee BoundValue de cmbDashboardMes y cmbDashboardAnio
+        ├── model('GetDashboardData', mes, año) → recalcula KPIs
+        ├── BuildKPICards() → recrea tarjetas con nuevos valores
+        └── UpdateTitle() → actualiza título con mes/año
+</code></pre></div>
+<h3 id="36-click-en-tarjeta-detalle">3.6 Click en Tarjeta → Detalle</h3>
+<div class="highlight"><pre><span></span><code>yKPICard.Click → oDashboardManager.ShowDetail(nKPIId)
+                   ├── model('GetDashboardDetail', nKPIId)
+                   │     → Consulta SQL detallada → cursor curDashboardDetail
+                   └── view('ShowDashboardDetail', nKPIId)
+                         ├── Oculta Pageframe1 + CntDashboardMain
+                         ├── Muestra CntDashboardDetail
+                         └── Llena grid con curDashboardDetail
+
+Botón "Volver" → view('HideDashboardDetail')
+                   ├── CntDashboardDetail.Visible = .F.
+                   ├── CntDashboardMain.Visible = .T. (Height=36)
+                   └── Pageframe1.Visible = .T.
+</code></pre></div>
+<hr>
+<h2 id="4-los-12-kpis-del-dashboard">4. Los 12 KPIs del Dashboard</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Indicador</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Ventas del Período</td>
+<td>Total facturado en el mes/año seleccionado</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Cobros</td>
+<td>Total de cobros realizados</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Top Productos</td>
+<td>Productos más vendidos</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Cuentas por Cobrar</td>
+<td>Saldo pendiente de clientes</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Cuentas por Pagar</td>
+<td>Saldo pendiente a proveedores</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Compras</td>
+<td>Total de compras del período</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Gastos</td>
+<td>Total de gastos operativos</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Flujo de Caja</td>
+<td>Movimientos bancarios netos</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Órdenes de Compra</td>
+<td>Estado de órdenes pendientes</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Top Clientes</td>
+<td>Clientes con mayor facturación</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Nómina</td>
+<td>Gastos de personal del período</td>
+</tr>
+<tr>
+<td>12</td>
+<td>Inventario</td>
+<td>Valor y estado del inventario</td>
+</tr>
+</tbody>
+</table>
+<p>Cada KPI se obtiene mediante consulta SQL directa a la base de datos del ERP, consolidados en el cursor <code>curDashboardKPI</code>.</p>
+<hr>
+<h2 id="5-integracion-con-json-y-persistencia">5. Integración con JSON y Persistencia</h2>
+<p>El sistema utiliza la infraestructura existente de <code>_Screen.YoApp1</code> para persistir el estado del dashboard:</p>
+<ul>
+<li><strong><code>GetParam(key)</code></strong> — Lee un valor de la tabla PARAMETROS para el usuario actual.</li>
+<li><strong><code>SetParam(key, value)</code></strong> — Escribe/actualiza un valor en PARAMETROS.</li>
+</ul>
+<p><strong>Claves utilizadas:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Clave</th>
+<th>Formato</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DashCardPos_[n]</code></td>
+<td><code>"Left,Top"</code></td>
+<td><code>"248,118"</code></td>
+</tr>
+</tbody>
+</table>
+<p>Esta integración permite que en el futuro se pueda migrar fácilmente a JSON completo (usando <code>jsonfox.app</code> que ya está en el proyecto) para almacenar layouts más complejos con dimensiones, tipo de gráfico, filtros personalizados por tarjeta, etc.</p>
+<hr>
+<h2 id="6-por-que-este-enfoque-es-superior">6. Por Qué Este Enfoque es Superior</h2>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Dashboard Anterior (Utility1)</th>
+<th>Dashboard Nuevo (Manager PRG)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Dependencias</strong></td>
+<td>indices.vcx + clases VCX</td>
+<td>1 archivo PRG, cero dependencias</td>
+</tr>
+<tr>
+<td><strong>Líneas de código en el form</strong></td>
+<td>~700+ líneas de BINDEVENT, hover, drag manual</td>
+<td>~10 líneas (solo delega al manager)</td>
+</tr>
+<tr>
+<td><strong>Drag-and-drop</strong></td>
+<td>Manual con MouseDown/Move/Up + 8 BINDEVENTs por tarjeta</td>
+<td>Nativo VFP9 <code>DragMode=1</code> + DragOver</td>
+</tr>
+<tr>
+<td><strong>Hover/efectos</strong></td>
+<td>BINDEVENT manual en cada control hijo</td>
+<td>Manejado por yKPICard.MouseEnter/Leave</td>
+</tr>
+<tr>
+<td><strong>Reutilización</strong></td>
+<td>Solo funciona en forms con Utility1 en diseño</td>
+<td>Cualquier form con un Pageframe</td>
+</tr>
+<tr>
+<td><strong>Mantenimiento</strong></td>
+<td>Cambiar VCX puede romper múltiples forms</td>
+<td>Un PRG aislado, versionable con Git</td>
+</tr>
+<tr>
+<td><strong>Testing</strong></td>
+<td>Difícil, depende de UI visual</td>
+<td>Se puede instanciar y probar el PRG</td>
+</tr>
+<tr>
+<td><strong>Persistencia</strong></td>
+<td>String "K:V,K:V" + ArrayFromList2.prg</td>
+<td>GetParam/SetParam directo</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="7-ideas-para-mejoras-futuras">7. Ideas para Mejoras Futuras</h2>
+<h3 id="71-corto-plazo-proximas-semanas">7.1 Corto Plazo (próximas semanas)</h3>
+<ul>
+<li><strong>Gráficos integrados:</strong> Usar FoxyPreviewer + FoxCharts (ya están en el proyecto) para generar gráficos de barras/pastel/línea dentro de cada tarjeta KPI.</li>
+<li><strong>Animación de carga:</strong> Mostrar un "skeleton loader" mientras se ejecutan las consultas SQL.</li>
+<li><strong>Tooltips contextuales:</strong> Al pasar sobre una tarjeta, mostrar variación vs. mes anterior (↑ +12%, ↓ -3%).</li>
+</ul>
+<h3 id="72-mediano-plazo-1-2-meses">7.2 Mediano Plazo (1-2 meses)</h3>
+<ul>
+<li><strong>Layout JSON completo:</strong> Migrar la persistencia a un JSON estructurado (usando <code>jsonfox.app</code>), almacenando no solo posición sino también:</li>
+<li>Dimensiones personalizadas (tarjetas expandibles)</li>
+<li>Tipo de gráfico preferido por KPI</li>
+<li>Filtros activos por tarjeta</li>
+<li>Orden de prioridad visual</li>
+<li><strong>Dashboard configurable:</strong> Permitir al usuario elegir qué KPIs mostrar/ocultar.</li>
+<li><strong>Alertas visuales:</strong> Tarjetas que cambian de color cuando un KPI supera un umbral definido (ej: CxC &gt; $100,000 → rojo parpadeante).</li>
+</ul>
+<h3 id="73-largo-plazo-3-meses">7.3 Largo Plazo (3+ meses)</h3>
+<ul>
+<li><strong>Múltiples dashboards:</strong> Guardar y alternar entre layouts nombrados ("Vista Gerencial", "Vista Contable", "Vista Ventas").</li>
+<li><strong>API REST:</strong> Exponer los KPIs como endpoints JSON usando VFPConnection.fll para consumo desde un dashboard web complementario.</li>
+<li><strong>Comparativas automáticas:</strong> Mostrar indicadores vs. período anterior, vs. presupuesto, vs. meta.</li>
+<li><strong>Exportación PDF:</strong> Generar un reporte PDF del dashboard completo con FoxyPreviewer para envío por correo.</li>
+</ul>
+<hr>
+<h2 id="8-resumen-tecnico-para-ti">8. Resumen Técnico para TI</h2>
+<div class="highlight"><pre><span></span><code>Archivos involucrados:
+  PRGS/defineDashboardManager.prg  → Clase gestora + clase yKPICard (~560 líneas)
+  FORMS/resumenfacturas.scx/.sct   → Formulario binario (ejecutable)
+  FORMS/resumenfacturas.sc2        → Fuente texto (versionable)
+
+Dependencias en runtime:
+  _Screen.YoApp1.GetParam()/.SetParam()  → Lectura/escritura en PARAMETROS
+  Conexión a BD del ERP                  → Para las 12 consultas SQL de KPIs
+
+No requiere:
+  × indices.vcx / Utility1
+  × ArrayFromList2.prg
+  × Clases "boxinfo" o "graph_cnconta"
+  × BINDEVENT para drag-and-drop
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 ContaPortable - Yuri Ernesto Calderón Rodríguez
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://youtube.com/contaportable" target="_blank" rel="noopener" title="youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.02 3.02 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.02 3.02 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.02 3.02 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.02 3.02 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814M9.545 15.568V8.432L15.818 12z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://facebook.com/contaportable" target="_blank" rel="noopener" title="facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a9 9 0 0 1 1.141.195v3.325a9 9 0 0 0-.653-.036 27 27 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.7 1.7 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.footer", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

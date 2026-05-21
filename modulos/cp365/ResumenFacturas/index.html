@@ -1,0 +1,2791 @@
+<!DOCTYPE html><html lang="es" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación del proyecto CP2025 (Visual FoxPro 9.0 + foxbin2prg)">
+      
+      
+      
+        <link rel="canonical" href="https://yecapp.github.io/CPDOCS/modulos/cp365/ResumenFacturas/">
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Resumen de Facturas — Panel Central de CP365 - CP2025 Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#resumen-de-facturas-panel-central-de-cp365" class="md-skip">
+          Saltar a contenido
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Cabecera">
+    <a href="../../.." title="CP2025 Docs" class="md-header__button md-logo" aria-label="CP2025 Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            CP2025 Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Resumen de Facturas — Panel Central de CP365
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="orange" data-md-color-accent="blue" aria-label="Dark mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Dark mode" for="__palette_1" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="orange" aria-label="Light mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Light mode" for="__palette_0" hidden="">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Búsqueda" placeholder="Búsqueda" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required="">
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Buscar">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Limpiar" aria-label="Limpiar" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix="">
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicializando búsqueda
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/YECAPP/CPDOCS" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M557.7 118.1c-2.3-6.1-9.3-9.2-15.3-6.6-5.7 2.4-8.5 8.9-6.3 14.6 10.9 29 16.9 60.5 16.9 93.3 0 134.6-100.3 245.7-230.2 262.7V358.4c7.9-1.5 15.5-3.6 23-6.2v104c106.7-25.9 185.9-122.1 185.9-236.8 0-91.8-50.8-171.8-125.8-213.3-5.7-3.2-13-.9-15.9 5-2.7 5.5-.6 12.2 4.7 15.1 67.9 37.6 113.9 110 113.9 193.2 0 93.3-57.9 173.1-139.8 205.4v-92.2c14.2-4.5 24.9-17.7 24.9-33.5 0-13.1-6.8-24.4-17.3-30.5 8.3-79.5 44.5-58.6 44.5-83.9V170c0-38-87.9-161.8-129-164.7-2.5-.2-5-.2-7.6 0C243.1 8.3 155.2 132 155.2 170v14.8c0 25.3 36.3 4.3 44.5 83.9-10.6 6.1-17.3 17.4-17.3 30.5 0 15.8 10.6 29 24.8 33.5v92.2c-81.9-32.2-139.8-112-139.8-205.4 0-83.1 46-155.5 113.9-193.2 5.4-3 7.4-9.6 4.7-15.1-2.9-5.9-10.1-8.2-15.9-5-75 41.5-125.8 121.5-125.8 213.3 0 114.7 79.2 210.8 185.9 236.8v-104c7.6 2.5 15.1 4.6 23 6.2v123.7C123.4 465.2 23 354.1 23 219.5c0-32.8 6-64.3 16.9-93.3 2.2-5.8-.6-12.2-6.3-14.6-6-2.6-13 .4-15.3 6.6C6.5 149.7 0 183.8 0 219.5c0 155.1 122.6 281.6 276.3 287.8V361.4c6.8.4 15 .5 23.4 0v145.8C453.4 501.1 576 374.6 576 219.5c0-35.7-6.5-69.8-18.3-101.4M357.9 322.9a23.7 23.7 0 1 1 0-47.4 23.7 23.7 0 1 1 0 47.4m-139.8-47.5a23.7 23.7 0 1 1 0 47.4 23.7 23.7 0 1 1 0-47.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    Documentación de ContaPortable
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navegación" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="CP2025 Docs" class="md-nav__button md-logo" aria-label="CP2025 Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+
+    </a>
+    CP2025 Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/YECAPP/CPDOCS" title="Ir al repositorio" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M557.7 118.1c-2.3-6.1-9.3-9.2-15.3-6.6-5.7 2.4-8.5 8.9-6.3 14.6 10.9 29 16.9 60.5 16.9 93.3 0 134.6-100.3 245.7-230.2 262.7V358.4c7.9-1.5 15.5-3.6 23-6.2v104c106.7-25.9 185.9-122.1 185.9-236.8 0-91.8-50.8-171.8-125.8-213.3-5.7-3.2-13-.9-15.9 5-2.7 5.5-.6 12.2 4.7 15.1 67.9 37.6 113.9 110 113.9 193.2 0 93.3-57.9 173.1-139.8 205.4v-92.2c14.2-4.5 24.9-17.7 24.9-33.5 0-13.1-6.8-24.4-17.3-30.5 8.3-79.5 44.5-58.6 44.5-83.9V170c0-38-87.9-161.8-129-164.7-2.5-.2-5-.2-7.6 0C243.1 8.3 155.2 132 155.2 170v14.8c0 25.3 36.3 4.3 44.5 83.9-10.6 6.1-17.3 17.4-17.3 30.5 0 15.8 10.6 29 24.8 33.5v92.2c-81.9-32.2-139.8-112-139.8-205.4 0-83.1 46-155.5 113.9-193.2 5.4-3 7.4-9.6 4.7-15.1-2.9-5.9-10.1-8.2-15.9-5-75 41.5-125.8 121.5-125.8 213.3 0 114.7 79.2 210.8 185.9 236.8v-104c7.6 2.5 15.1 4.6 23 6.2v123.7C123.4 465.2 23 354.1 23 219.5c0-32.8 6-64.3 16.9-93.3 2.2-5.8-.6-12.2-6.3-14.6-6-2.6-13 .4-15.3 6.6C6.5 149.7 0 183.8 0 219.5c0 155.1 122.6 281.6 276.3 287.8V361.4c6.8.4 15 .5 23.4 0v145.8C453.4 501.1 576 374.6 576 219.5c0-35.7-6.5-69.8-18.3-101.4M357.9 322.9a23.7 23.7 0 1 1 0-47.4 23.7 23.7 0 1 1 0 47.4m-139.8-47.5a23.7 23.7 0 1 1 0 47.4 23.7 23.7 0 1 1 0-47.4"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    Documentación de ContaPortable
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix="">
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inicio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clases
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Clases
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1">
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Bancos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Bancos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bancos/Conciliacionbancaria/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conciliación Bancaria
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Factura
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Factura
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../facturacion/facturacion_dual/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Dual
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../facturacion/facturacion_lineas_multiples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multilínea
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../facturacion/personalizar_secuencia_gen_dte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Personalizar secuencia de generación DTE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../facturacion/importar_clientes_desde_plantilla/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Importar Clientes y Facturas desde plantilla Excel
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_5">
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_5" id="__nav_2_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configurar links de Pago
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Configurar links de Pago
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../facturacion/linksPago/wompi/linkPagoWompi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Wompi
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../facturacion/gestion_cuentas_por_cobrar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestión de CXC
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../facturacion/configMultiProvEmail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configurar Email para envio de DTE o cotización
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3">
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compras
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Compras
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../compras/gestion_cuentas_por_pagar/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestión de CXP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4">
+        
+          
+          <label class="md-nav__link" for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventario
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Inventario
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventario/FamiliaInventario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gestión de familias de inventario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventario/GastosImportacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gastos de Importación (OEC)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../inventario/Retaceo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Retaceos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5">
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Contabilidad
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Contabilidad
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../contabilidad/ReportesContables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reportes Contables
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6">
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reportes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reportes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reports/reportes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Introducción
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_6_2" id="__nav_2_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clientes
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Clientes
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reports/categorias/clientes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reportes de clientes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reports/categorias/CLI1H/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interfaz de gestión y envío de avisos de cobro
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reports/categorias/inventario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inventario
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Reports/categorias/impuestos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Impuestos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7">
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Informes(Anexos)
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Informes(Anexos)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Informes_anexos/anexos_f07/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    F07
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2_7_2" id="__nav_2_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    F14
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    F14
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Informes_anexos/anexos_f14/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anexo de retenciones de renta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Informes_anexos/anexos_f14Q25/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Anexo de pago de quincena 25
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8">
+        
+          
+          <label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Planillas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Planillas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planillas/planillas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Módulo de planillas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../planillas/planillas_Q25/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quincena 25
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9">
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parametros en Contaportable
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parametros en Contaportable
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix="">
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Parametros/Modulos/Facturaci%C3%B3n/ParametrosEnFacturacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Facturación
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Parametros/Modulos/Informes_anexos/ParametrosEnAnexos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Informes Anexos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+      
+        <li class="md-nav__item">
+  <a href="#1-objetivo-y-vision-general" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Objetivo y Visión General
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-estructura-de-la-interfaz" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Estructura de la Interfaz
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-sidebar-arbol-de-navegacion-lateral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Sidebar: Árbol de Navegación Lateral
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Sidebar: Árbol de Navegación Lateral">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.1 Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-oportunidades-cotizaciones" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.2 Oportunidades (Cotizaciones)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Oportunidades (Cotizaciones)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-puede-hacer-el-usuario" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué puede hacer el usuario?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#columnas-del-listado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Columnas del listado
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-ventas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Ventas
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Ventas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-puede-hacer-el-usuario_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué puede hacer el usuario?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#columnas-del-listado-de-ventas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Columnas del listado de Ventas
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-establecimientos-y-puntos-de-venta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.4 Establecimientos y Puntos de Venta
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 Establecimientos y Puntos de Venta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-puede-hacer-el-usuario_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué puede hacer el usuario?
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-clientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.5 Clientes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 Clientes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#que-puede-hacer-el-usuario_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ¿Qué puede hacer el usuario?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campos-principales-del-catalogo-de-clientes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campos principales del catálogo de clientes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#36-reportes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.6 Reportes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.6 Reportes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#familias-de-reportes-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Familias de reportes disponibles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-configuracion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.7 Configuración
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.7 Configuración">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#opciones-de-configuracion-disponibles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Opciones de configuración disponibles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Opciones de configuración disponibles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-correo-electronico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuración de Correo Electrónico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parametros-de-facturacion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Parámetros de Facturación
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuracion-de-transmision-dte" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuración de Transmisión DTE
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-administracion-de-sucursales-y-puntos-de-venta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Administración de Sucursales y Puntos de Venta
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Administración de Sucursales y Puntos de Venta">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-crear-un-nuevo-establecimiento" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Crear un nuevo establecimiento
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-crear-un-nuevo-punto-de-venta" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Crear un nuevo punto de venta
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-sincronizacion-automatica" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Sincronización Automática
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requisitos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Requisitos previos
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-acciones-disponibles-en-la-barra-de-herramientas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Acciones Disponibles en la Barra de Herramientas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-flujo-general-de-trabajo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Flujo General de Trabajo
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-navegacion-relacionada" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Navegación Relacionada
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="resumen-de-facturas-panel-central-de-cp365">Resumen de Facturas — Panel Central de CP365</h1>
+<h2 id="1-objetivo-y-vision-general">1. Objetivo y Visión General</h2>
+<p>En la nueva versión <strong>CP365</strong>, el módulo <strong>Resumen de Facturas</strong> evoluciona de ser un simple emisor de DTEs a convertirse en el <strong>Panel Central (Dashboard)</strong> de navegación de toda la aplicación. A través de su barra lateral (sidebar) interactiva, los usuarios pueden desplazarse entre los diferentes módulos del ContaPortable sin necesidad de navegar por menús tradicionales desplegables.</p>
+<p>Desde aquí se gestionan documentos de venta, comprobantes electrónicos (DTE), cotizaciones/oportunidades, reportes de IVA y de Clientes, la estructura operativa jerárquica (establecimientos y puntos de venta), el catálogo de clientes y la configuración general del módulo de ventas.</p>
+<blockquote>
+<p><strong>Archivo fuente principal:</strong> <code>ResumenFacturas.sc2</code></p>
+</blockquote>
+<!-- IMAGEN: Captura de pantalla de la vista general del módulo Resumen de Facturas, mostrando el sidebar, el grid principal y la barra de acciones -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/resumen_general.png" data-desc-position="bottom"><img alt="Vista General del Dashboard – Resumen de Facturas" src="img/resumen_general.png"></a></p>
+<hr>
+<h2 id="2-estructura-de-la-interfaz">2. Estructura de la Interfaz</h2>
+<p>El formulario está compuesto por tres áreas funcionales:</p>
+<table>
+<thead>
+<tr>
+<th>Área</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Barra Lateral (Sidebar)</strong></td>
+<td>Árbol de navegación jerárquico con todos los nodos disponibles.</td>
+</tr>
+<tr>
+<td><strong>Listado Principal (Grid)</strong></td>
+<td>Muestra los registros correspondientes al nodo seleccionado.</td>
+</tr>
+<tr>
+<td><strong>Barra de Acciones</strong></td>
+<td>Botones contextuales superiores e inferiores para operar sobre los registros.</td>
+</tr>
+</tbody>
+</table>
+<!-- IMAGEN: Diagrama o captura anotada que muestre las tres áreas de la interfaz -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/resumen_estructura.png" data-desc-position="bottom"><img alt="Estructura de la Interfaz de Resumen de Facturas" src="img/resumen_estructura.png"></a></p>
+<hr>
+<h2 id="3-sidebar-arbol-de-navegacion-lateral">3. Sidebar: Árbol de Navegación Lateral</h2>
+<p>El sidebar es el corazón de la navegación en CP365. Está organizado en secciones principales. Al hacer clic en cada nodo, el grid central carga los registros correspondientes y la barra de acciones ajusta sus botones al contexto.</p>
+<!-- IMAGEN: Captura del sidebar completo con todos los nodos visibles y expandidos -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/sidebar_completo.png" data-desc-position="bottom"><img alt="Árbol de Navegación Lateral (Sidebar) completo" src="img/sidebar_completo.png"></a></p>
+<h3 id="31-dashboard">3.1 Dashboard</h3>
+<p>El nodo <strong>Dashboard</strong> es la pantalla de inicio del módulo. Muestra un resumen visual con indicadores clave del período actual:</p>
+<ul>
+<li>Totales de ventas del día, semana y mes.</li>
+<li>Número de DTEs emitidos y pendientes de transmisión.</li>
+<li>Alertas de documentos rechazados o con errores.</li>
+<li>Accesos directos a las secciones más utilizadas.</li>
+</ul>
+<!-- IMAGEN: Captura del dashboard con los indicadores clave de ventas -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/dashboard_inicio.png" data-desc-position="bottom"><img alt="Dashboard principal de Resumen de Facturas" src="img/dashboard_inicio.png"></a></p>
+<blockquote>
+<p><strong>Nota:</strong> Los indicadores del dashboard se actualizan automáticamente al abrir el formulario. El usuario puede refrescarlos desde el botón de actualización en la barra de acciones.</p>
+</blockquote>
+<hr>
+<h3 id="32-oportunidades-cotizaciones">3.2 Oportunidades (Cotizaciones)</h3>
+<p>Esta sección gestiona el ciclo preventa. Las <strong>oportunidades</strong> son documentos de cotización que pueden convertirse en facturas o ventas definitivas.</p>
+<!-- IMAGEN: Captura del listado de oportunidades/cotizaciones con sus columnas de estado -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/oportunidades_listado.png" data-desc-position="bottom"><img alt="Listado de Oportunidades y Cotizaciones" src="img/oportunidades_listado.png"></a></p>
+<h4 id="que-puede-hacer-el-usuario">¿Qué puede hacer el usuario?</h4>
+<ol>
+<li><strong>Nueva cotización:</strong> Crear una propuesta comercial para un cliente.</li>
+<li><strong>Editar cotización:</strong> Modificar precio, cantidad o condiciones de una cotización existente.</li>
+<li><strong>Convertir a Venta/DTE:</strong> Transformar la cotización aprobada en un documento de venta formal.</li>
+<li><strong>Copiar documento:</strong> Duplicar una cotización para agilizar una nueva.</li>
+<li><strong>Anular cotización:</strong> Marcar una cotización como cancelada sin eliminarla.</li>
+<li><strong>Enviar por correo:</strong> Enviar la cotización al cliente directamente desde el sistema.</li>
+</ol>
+<!-- IMAGEN: Captura del formulario de creación/edición de cotización -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/oportunidades_formulario.png" data-desc-position="bottom"><img alt="Formulario de Cotización" src="img/oportunidades_formulario.png"></a></p>
+<h4 id="columnas-del-listado">Columnas del listado</h4>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Número</td>
+<td>Correlativo interno de la cotización.</td>
+</tr>
+<tr>
+<td>Fecha</td>
+<td>Fecha de emisión.</td>
+</tr>
+<tr>
+<td>Cliente</td>
+<td>Nombre y código del cliente.</td>
+</tr>
+<tr>
+<td>Monto</td>
+<td>Total de la cotización.</td>
+</tr>
+<tr>
+<td>Estado</td>
+<td>Pendiente / Convertida / Anulada.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="33-ventas">3.3 Ventas</h3>
+<p>La sección de <strong>Ventas</strong> es el núcleo operativo del módulo. Desde aquí se emiten y consultan los documentos de venta, incluyendo Facturas DTE, Notas de Crédito, Notas de Débito y otros documentos tributarios.</p>
+<!-- IMAGEN: Captura del listado de ventas/facturas con columnas de estado DTE -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/ventas_listado.png" data-desc-position="bottom"><img alt="Listado principal de Ventas" src="img/ventas_listado.png"></a></p>
+<h4 id="que-puede-hacer-el-usuario_1">¿Qué puede hacer el usuario?</h4>
+<ol>
+<li><strong>Nueva Venta:</strong> Generar un documento de venta estándar o DTE electrónico.</li>
+<li><strong>Nueva Factura DTE:</strong> Emitir un Comprobante de Transmisión Electrónica ante el Ministerio de Hacienda.</li>
+<li><strong>Ver detalle de transmisión:</strong> Consultar el estado de un DTE (Procesado, Rechazado, Contingencia).</li>
+<li><strong>Anular DTE:</strong> Solicitar la invalidación de un comprobante ante el MH.</li>
+<li><strong>Copiar documento:</strong> Duplicar una factura existente para agilizar el registro de un nuevo documento similar.</li>
+<li><strong>Enviar por correo:</strong> Reenviar el DTE en PDF al cliente desde el sistema.</li>
+<li><strong>Ver contactos:</strong> Acceder a los datos de contacto del cliente asociado al documento.</li>
+</ol>
+<!-- IMAGEN: Captura del formulario de emisión de factura DTE con los campos principales -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/ventas_formulario_dte.png" data-desc-position="bottom"><img alt="Formulario de emisión de Factura DTE" src="img/ventas_formulario_dte.png"></a></p>
+<h4 id="columnas-del-listado-de-ventas">Columnas del listado de Ventas</h4>
+<table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Número</td>
+<td>Correlativo del documento.</td>
+</tr>
+<tr>
+<td>Tipo Doc.</td>
+<td>Tipo de documento (Factura, CCF, Nota de Crédito, etc.).</td>
+</tr>
+<tr>
+<td>Fecha</td>
+<td>Fecha de emisión.</td>
+</tr>
+<tr>
+<td>Cliente</td>
+<td>Nombre del cliente receptor.</td>
+</tr>
+<tr>
+<td>Monto</td>
+<td>Total del documento.</td>
+</tr>
+<tr>
+<td>Estado DTE</td>
+<td>Estado de transmisión: Procesado / Rechazado / Contingencia / Pendiente.</td>
+</tr>
+<tr>
+<td>Código de Generación</td>
+<td>UUID del DTE emitido (cuando aplica).</td>
+</tr>
+</tbody>
+</table>
+<!-- IMAGEN: Captura del visor de estado de transmisión de un DTE, mostrando el código de generación y sello de recepción -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/ventas_estado_dte.png" data-desc-position="bottom"><img alt="Detalle de Estado de Transmisión DTE" src="img/ventas_estado_dte.png"></a></p>
+<hr>
+<h3 id="34-establecimientos-y-puntos-de-venta">3.4 Establecimientos y Puntos de Venta</h3>
+<p>Esta sección del sidebar permite administrar la estructura operativa de la empresa, que es <strong>indispensable</strong> para la emisión de DTEs. Aquí se crean y mantienen los establecimientos (sucursales) y sus puntos de venta asociados.</p>
+<blockquote>
+<p>El formulario de mantenimiento se llama <code>SucursalPV.sc2</code>.</p>
+</blockquote>
+<!-- IMAGEN: Captura del árbol de establecimientos y puntos de venta en el sidebar -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/sidebar_establecimientos.png" data-desc-position="bottom"><img alt="Nodo de Establecimientos y Puntos de Venta en el Sidebar" src="img/sidebar_establecimientos.png"></a></p>
+<h4 id="que-puede-hacer-el-usuario_2">¿Qué puede hacer el usuario?</h4>
+<ol>
+<li>Crear un nuevo establecimiento.</li>
+<li>Crear un nuevo punto de venta vinculado a un establecimiento existente.</li>
+<li>Consultar la información de un establecimiento o punto de venta.</li>
+<li>Modificar establecimientos o puntos de venta registrados.</li>
+<li>Asignar o retirar encargados a un punto de venta.</li>
+</ol>
+<p>Para más detalles sobre el formulario de administración, consulte la sección <strong><a href="#4-administración-de-sucursales-y-puntos-de-venta">4. Administración de Sucursales y Puntos de Venta</a></strong> de este mismo documento.</p>
+<hr>
+<h3 id="35-clientes">3.5 Clientes</h3>
+<p>La sección de <strong>Clientes</strong> permite gestionar el catálogo completo de clientes de la empresa directamente desde el panel central de ventas.</p>
+<!-- IMAGEN: Captura del listado de clientes con sus datos principales -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/clientes_listado.png" data-desc-position="bottom"><img alt="Listado de Clientes desde el Sidebar de CP365" src="img/clientes_listado.png"></a></p>
+<h4 id="que-puede-hacer-el-usuario_3">¿Qué puede hacer el usuario?</h4>
+<ol>
+<li><strong>Nuevo cliente:</strong> Registrar un cliente con todos sus datos fiscales (NIT, NRC, razón social, dirección, etc.).</li>
+<li><strong>Editar cliente:</strong> Actualizar información de contacto, dirección o datos fiscales.</li>
+<li><strong>Ver historial:</strong> Consultar el historial de facturas emitidas a un cliente.</li>
+<li><strong>Gestionar contactos:</strong> Agregar o editar los contactos asociados a una empresa cliente.</li>
+<li><strong>Buscar cliente:</strong> Filtrar el listado por nombre, código, NIT o NRC.</li>
+</ol>
+<!-- IMAGEN: Captura del formulario de cliente con sus pestañas (Datos Generales, Contactos, Historial) -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/clientes_formulario.png" data-desc-position="bottom"><img alt="Formulario de Gestión de Cliente" src="img/clientes_formulario.png"></a></p>
+<h4 id="campos-principales-del-catalogo-de-clientes">Campos principales del catálogo de clientes</h4>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Código</td>
+<td>Identificador interno del cliente.</td>
+</tr>
+<tr>
+<td>Nombre / Razón Social</td>
+<td>Nombre legal del cliente.</td>
+</tr>
+<tr>
+<td>NIT</td>
+<td>Número de Identificación Tributaria.</td>
+</tr>
+<tr>
+<td>NRC</td>
+<td>Número de Registro de Contribuyente (para CCF).</td>
+</tr>
+<tr>
+<td>Giro</td>
+<td>Actividad económica del cliente.</td>
+</tr>
+<tr>
+<td>Dirección</td>
+<td>Dirección fiscal registrada.</td>
+</tr>
+<tr>
+<td>Departamento / Municipio</td>
+<td>Ubicación geográfica.</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>Correo para envío de DTE y cotizaciones.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="36-reportes">3.6 Reportes</h3>
+<p>La sección de <strong>Reportes</strong> del sidebar da acceso al motor de reportería de CP365, que agrupa informes de clientes (familia <code>CLI</code>) e informes de IVA (familia <code>IVA</code>).</p>
+<blockquote>
+<p><strong>Documentación completa del sistema de reportes:</strong> <a href="../ReporteadorCP/">ReporteadorCP.md</a></p>
+</blockquote>
+<!-- IMAGEN: Captura de los nodos de Reportes en el sidebar, mostrando las familias CLI e IVA desplegadas -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/sidebar_reportes.png" data-desc-position="bottom"><img alt="Nodos de Reportes en el Sidebar" src="img/sidebar_reportes.png"></a></p>
+<h4 id="familias-de-reportes-disponibles">Familias de reportes disponibles</h4>
+<table>
+<thead>
+<tr>
+<th>Familia</th>
+<th>Prefijo</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Clientes</strong></td>
+<td><code>CLI</code></td>
+<td>Movimientos, facturas pendientes, cobros, listados de facturas emitidas, avisos de cobro, etc.</td>
+</tr>
+<tr>
+<td><strong>IVA</strong></td>
+<td><code>IVA</code></td>
+<td>Libro de ventas, compras, liquidaciones, resúmenes de impuestos, etc.</td>
+</tr>
+</tbody>
+</table>
+<p>Al seleccionar un reporte del sidebar, el sistema abre el <strong>Motor de Reportería (<code>ReportRenderContainer</code>)</strong> que renderiza los filtros definidos en su archivo JSON correspondiente y permite:</p>
+<ul>
+<li>Generar el reporte en pantalla (grid).</li>
+<li>Exportar a Excel.</li>
+<li>Generar PDF para impresión.</li>
+<li>Enviar por correo electrónico (según el tipo de reporte).</li>
+<li>Guardar y cargar presets de filtros.</li>
+</ul>
+<!-- IMAGEN: Captura del motor de reportería con los filtros de un reporte de la familia CLI -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/reportes_filtros.png" data-desc-position="bottom"><img alt="Motor de Reportería – Vista de filtros" src="img/reportes_filtros.png"></a></p>
+<p>Para la referencia técnica completa del motor de reportes, incluyendo la arquitectura JSON, los adaptadores y la clase <code>ReportRenderContainer</code>, consulte: <strong><a href="../ReporteadorCP/">ReporteadorCP.md</a></strong></p>
+<hr>
+<h3 id="37-configuracion">3.7 Configuración</h3>
+<p>La sección de <strong>Configuración</strong> del sidebar agrupa los parámetros y opciones que controlan el comportamiento del módulo de ventas en CP365.</p>
+<!-- IMAGEN: Captura del nodo de Configuración en el sidebar con sus sub-opciones -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/sidebar_configuracion.png" data-desc-position="bottom"><img alt="Nodo de Configuración en el Sidebar" src="img/sidebar_configuracion.png"></a></p>
+<h4 id="opciones-de-configuracion-disponibles">Opciones de configuración disponibles</h4>
+<h5 id="configuracion-de-correo-electronico">Configuración de Correo Electrónico</h5>
+<p>Permite definir el proveedor de email para el envío de DTEs, cotizaciones y avisos de cobro. Soporta múltiples proveedores SMTP.</p>
+<!-- IMAGEN: Captura del formulario de configuración de email con los campos SMTP -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/config_email.png" data-desc-position="bottom"><img alt="Configuración de Correo Electrónico" src="img/config_email.png"></a></p>
+<ul>
+<li>Servidor SMTP / Puerto.</li>
+<li>Credenciales (usuario y contraseña / OAuth2).</li>
+<li>Correo remitente y nombre del emisor.</li>
+<li>Prueba de conexión integrada.</li>
+</ul>
+<blockquote>
+<p>Para más detalles sobre esta configuración, consulte: <a href="../../facturacion/configMultiProvEmail.md">Configurar Email para envío de DTE o cotización</a></p>
+</blockquote>
+<h5 id="parametros-de-facturacion">Parámetros de Facturación</h5>
+<p>Configuración de los parámetros generales que afectan la emisión de documentos de venta:</p>
+<ul>
+<li>Tipo de documento por defecto.</li>
+<li>Condiciones de pago predeterminadas.</li>
+<li>Activar/desactivar campos opcionales en el formulario de venta.</li>
+<li>Configuración de la secuencia de generación de DTEs.</li>
+</ul>
+<!-- IMAGEN: Captura del formulario de parámetros de facturación -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/config_parametros_facturacion.png" data-desc-position="bottom"><img alt="Parámetros de Facturación" src="img/config_parametros_facturacion.png"></a></p>
+<h5 id="configuracion-de-transmision-dte">Configuración de Transmisión DTE</h5>
+<p>Opciones relacionadas con la comunicación con el Ministerio de Hacienda (MH) para la emisión electrónica:</p>
+<ul>
+<li>Ambiente (Pruebas / Producción).</li>
+<li>Certificado digital.</li>
+<li>Modo de contingencia.</li>
+<li>Tiempo de espera para respuesta del MH.</li>
+</ul>
+<!-- IMAGEN: Captura de la configuración de transmisión DTE -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/config_transmision_dte.png" data-desc-position="bottom"><img alt="Configuración de Transmisión DTE" src="img/config_transmision_dte.png"></a></p>
+<hr>
+<h2 id="4-administracion-de-sucursales-y-puntos-de-venta">4. Administración de Sucursales y Puntos de Venta</h2>
+<p>En CP365, la configuración de la estructura operativa es indispensable para la emisión de DTEs. Cada DTE debe asociarse a un establecimiento y punto de venta registrado y activo.</p>
+<p>El árbol de ventas del sidebar muestra la jerarquía de establecimientos y puntos de venta. Desde allí se puede acceder al formulario de mantenimiento <code>SucursalPV.sc2</code>.</p>
+<!-- IMAGEN: Captura del formulario SucursalPV con la pestaña de Establecimiento abierta -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/sucursal_formulario.png" data-desc-position="bottom"><img alt="Formulario de Establecimientos y Puntos de Venta" src="img/sucursal_formulario.png"></a></p>
+<h3 id="41-crear-un-nuevo-establecimiento">4.1 Crear un nuevo establecimiento</h3>
+<ol>
+<li>En la barra lateral, seleccione el nodo raíz de <strong>Ventas</strong> o <strong>Establecimientos</strong>.</li>
+<li>Haga clic en el botón <strong>Nuevo establecimiento</strong> en la barra de acciones (o clic derecho sobre el nodo).</li>
+<li>Confirme el mensaje de creación.</li>
+<li>El sistema abrirá el formulario <code>SucursalPV</code> en la pestaña <strong>Establecimiento</strong>.</li>
+<li>Complete los datos obligatorios:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Código</td>
+<td>4 caracteres, identificador único</td>
+<td><code>M001</code></td>
+</tr>
+<tr>
+<td>Nombre</td>
+<td>Nombre comercial del establecimiento</td>
+<td><code>Sucursal Central</code></td>
+</tr>
+<tr>
+<td>Dirección</td>
+<td>Dirección física</td>
+<td><code>Calle Principal #15</code></td>
+</tr>
+<tr>
+<td>Tipo de establecimiento DTE</td>
+<td>Según catálogo del MH</td>
+<td><code>01 – Sucursal</code></td>
+</tr>
+<tr>
+<td>Departamento</td>
+<td>Departamento donde opera</td>
+<td><code>San Salvador</code></td>
+</tr>
+<tr>
+<td>Municipio</td>
+<td>Municipio donde opera</td>
+<td><code>San Salvador</code></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Presione <strong>Guardar</strong>.</li>
+</ol>
+<!-- IMAGEN: Captura del formulario con los campos del establecimiento completos antes de guardar -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/sucursal_crear_establecimiento.png" data-desc-position="bottom"><img alt="Creación de un nuevo Establecimiento" src="img/sucursal_crear_establecimiento.png"></a></p>
+<h3 id="42-crear-un-nuevo-punto-de-venta">4.2 Crear un nuevo punto de venta</h3>
+<ol>
+<li>Expanda el establecimiento en el árbol lateral y seleccione la opción <strong>Nuevo punto de venta</strong> (o use el menú contextual).</li>
+<li>El formulario se abrirá en la pestaña <strong>PV</strong>.</li>
+<li>Complete los datos:</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Descripción</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Código</td>
+<td>Identificador del PV</td>
+<td><code>P001</code></td>
+</tr>
+<tr>
+<td>Nombre</td>
+<td>Nombre del punto de venta</td>
+<td><code>Caja 1</code></td>
+</tr>
+<tr>
+<td>Encargado</td>
+<td>Usuario responsable del PV (obligatorio)</td>
+<td><code>Vendedor01</code></td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Asegúrese de <strong>asignar al menos un encargado</strong> desde la lista de usuarios disponibles.</li>
+<li>Presione <strong>Guardar</strong>.</li>
+</ol>
+<!-- IMAGEN: Captura del formulario PV con el campo de encargado asignado -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/sucursal_crear_pv.png" data-desc-position="bottom"><img alt="Creación de un nuevo Punto de Venta con Encargado" src="img/sucursal_crear_pv.png"></a></p>
+<h3 id="43-sincronizacion-automatica">4.3 Sincronización Automática</h3>
+<p>Al inicializar <strong>Resumen de Facturas</strong>, el sistema compara la tabla <code>AutoCorrel</code> con <code>SucursalPV</code>. Si detecta registros preexistentes de versiones anteriores (ContaPortable tradicional), los agrega automáticamente al árbol para facilitar la transición a CP365.</p>
+<!-- IMAGEN: Mensaje o log de sincronización automática detectado al abrir el módulo -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/sucursal_sincronizacion.png" data-desc-position="bottom"><img alt="Sincronización automática de establecimientos heredados" src="img/sucursal_sincronizacion.png"></a></p>
+<h3 id="requisitos-previos">Requisitos previos</h3>
+<ul>
+<li>El usuario debe tener acceso al módulo de ventas y a la configuración de sucursales / puntos de venta.</li>
+<li>Deben existir catálogos activos de departamentos, municipios, tipos de establecimiento y usuarios.</li>
+</ul>
+<hr>
+<h2 id="5-acciones-disponibles-en-la-barra-de-herramientas">5. Acciones Disponibles en la Barra de Herramientas</h2>
+<p>La barra de acciones contextual cambia según el nodo seleccionado en el sidebar. A continuación se describen las acciones más comunes:</p>
+<!-- IMAGEN: Captura de la barra de acciones con todos los botones visibles, en el contexto del nodo Ventas -->
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="img/barra_acciones_ventas.png" data-desc-position="bottom"><img alt="Barra de Acciones – contexto Ventas" src="img/barra_acciones_ventas.png"></a></p>
+<table>
+<thead>
+<tr>
+<th>Botón / Acción</th>
+<th>Contexto</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nuevo</strong></td>
+<td>Ventas / Cotizaciones / Clientes</td>
+<td>Crea un nuevo documento o registro.</td>
+</tr>
+<tr>
+<td><strong>Editar / Modificar</strong></td>
+<td>Todos los nodos</td>
+<td>Abre el formulario de edición del registro seleccionado.</td>
+</tr>
+<tr>
+<td><strong>Anular</strong></td>
+<td>Ventas / DTEs</td>
+<td>Inicia el proceso de anulación o invalidación del documento.</td>
+</tr>
+<tr>
+<td><strong>Copiar</strong></td>
+<td>Ventas / Cotizaciones</td>
+<td>Duplica el documento seleccionado.</td>
+</tr>
+<tr>
+<td><strong>Ver estado DTE</strong></td>
+<td>Ventas DTE</td>
+<td>Muestra el estado de transmisión ante el MH.</td>
+</tr>
+<tr>
+<td><strong>Enviar correo</strong></td>
+<td>Ventas / Cotizaciones</td>
+<td>Envía el documento por email al cliente.</td>
+</tr>
+<tr>
+<td><strong>Ver contactos</strong></td>
+<td>Ventas / Clientes</td>
+<td>Muestra los contactos registrados del cliente.</td>
+</tr>
+<tr>
+<td><strong>Actualizar</strong></td>
+<td>Dashboard</td>
+<td>Refresca los indicadores del panel principal.</td>
+</tr>
+<tr>
+<td><strong>Exportar</strong></td>
+<td>Reportes</td>
+<td>Exporta el resultado del reporte a Excel o PDF.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="6-flujo-general-de-trabajo">6. Flujo General de Trabajo</h2>
+<p>El siguiente diagrama muestra el flujo estándar de un documento desde su creación hasta la transmisión DTE:</p>
+<pre class="mermaid"><code>flowchart TD
+    A([Inicio: Abrir Resumen de Facturas]) --&gt; B{¿Qué tipo de operación?}
+    B --&gt; C[Cotización / Oportunidad]
+    B --&gt; D[Venta / Factura DTE]
+    B --&gt; E[Gestión de Cliente]
+    C --&gt; F[Crear cotización]
+    F --&gt; G{¿Aprobada?}
+    G -- Sí --&gt; D
+    G -- No --&gt; H([Archivar / Anular cotización])
+    D --&gt; I[Emitir DTE]
+    I --&gt; J{¿Transmisión exitosa?}
+    J -- Sí --&gt; K([DTE Procesado - Fin])
+    J -- No --&gt; L{¿Contingencia?}
+    L -- Sí --&gt; M[Reenviar en modo contingencia]
+    M --&gt; J
+    L -- No --&gt; N([Revisar error y corregir])
+    E --&gt; O[Crear o actualizar cliente]
+    O --&gt; D</code></pre>
+<hr>
+<h2 id="7-navegacion-relacionada">7. Navegación Relacionada</h2>
+<table>
+<thead>
+<tr>
+<th>Sección</th>
+<th>Referencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Motor de Reportería (CLI / IVA)</td>
+<td><a href="../ReporteadorCP/">ReporteadorCP.md</a></td>
+</tr>
+<tr>
+<td>Introducción a CP365</td>
+<td><a href="../Introduccion_CP365/">Introduccion_CP365.md</a></td>
+</tr>
+<tr>
+<td>Migración de Datos</td>
+<td><a href="../TBDataMigrate/">TBDataMigrate.md</a></td>
+</tr>
+<tr>
+<td>Gestión de CXC</td>
+<td><a href="../../facturacion/gestion_cuentas_por_cobrar.md">Gestión de Cuentas por Cobrar</a></td>
+</tr>
+<tr>
+<td>Configurar Email</td>
+<td><a href="../../facturacion/configMultiProvEmail.md">configMultiProvEmail.md</a></td>
+</tr>
+<tr>
+<td>Parámetros de Facturación</td>
+<td><a href="../../../Parametros/Modulos/Facturación/ParametrosEnFacturacion.md">ParametrosEnFacturacion.md</a></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 ContaPortable - Yuri Ernesto Calderón Rodríguez
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://youtube.com/contaportable" target="_blank" rel="noopener" title="youtube.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23.498 6.186a3.02 3.02 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.02 3.02 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.02 3.02 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.02 3.02 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814M9.545 15.568V8.432L15.818 12z"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://facebook.com/contaportable" target="_blank" rel="noopener" title="facebook.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a9 9 0 0 1 1.141.195v3.325a9 9 0 0 0-.653-.036 27 27 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.7 1.7 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["content.code.copy", "navigation.instant", "navigation.sections", "navigation.tracking", "navigation.footer", "search.suggest", "search.highlight"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copiado al portapapeles", "clipboard.copy": "Copiar al portapapeles", "search.result.more.one": "1 m\u00e1s en esta p\u00e1gina", "search.result.more.other": "# m\u00e1s en esta p\u00e1gina", "search.result.none": "No se encontraron documentos", "search.result.one": "1 documento encontrado", "search.result.other": "# documentos encontrados", "search.result.placeholder": "Teclee para comenzar b\u00fasqueda", "search.result.term.missing": "Falta", "select.version": "Seleccionar versi\u00f3n"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
