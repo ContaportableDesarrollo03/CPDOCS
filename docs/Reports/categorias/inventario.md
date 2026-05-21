@@ -89,6 +89,7 @@ Vista previa del reporte **![Reporte de existencias](../../assets/reportes/inven
 Puedes encontrar más información en el sitio oficial de **ContaPortable** **[Enlace en sitio ContaPortable :material-web:](https://www.contaportable.com/indice/vip-modulo-contable-reportes-contables/reporte-inventario-y-facturacion/#existencia){ .md-button align=left }**
 
 ---
+
 ### 1.2  Listado para inventario
 
 !!! info "Descripción del reporte"
@@ -110,6 +111,7 @@ Vista previa del reporte **![Reporte de listado para inventario](../../assets/re
 Puedes encontrar más información en el sitio oficial de **ContaPortable** **[Enlace en sitio ContaPortable :material-web:](https://www.contaportable.com/indice/vip-modulo-contable-reportes-contables/reporte-inventario-y-facturacion/#existencia){ .md-button align=left }**
 
 ---
+
 ### 1.3  Listado por categorías
 
 **ERROR 404 - NOT FOUND**
@@ -117,6 +119,7 @@ Puedes encontrar más información en el sitio oficial de **ContaPortable** **[E
       **[Enlace en sitio ContaPortable :material-web:](https://www.contaportable.com/indice/vip-modulo-contable-reportes-contables/reporte-inventario-y-facturacion/#existencia){ .md-button }**
 
 ---
+
 ### 1.4  Salidas por clientes
 
 !!! info "Descripción del reporte"
@@ -134,6 +137,7 @@ Vista previa del reporte **![Reporte de salidas por clientes](../../assets/repor
     - **[Descargar versión Excel (Plano) :material-microsoft-excel:](../../assets/reportes/inventario/1.4-SALES-BY-CUSTOMER_PLN.xlsx){ .md-button }**
 
 ---
+
 ### 1.5  Existencias (Alerta de mínimos)
 
 !!! info "Descripción del reporte"
@@ -202,6 +206,7 @@ Vista previa del reporte **![Reporte de movimientos en ordenes de compra](../../
 Puedes encontrar más información en el sitio oficial de **ContaPortable** **[Enlace en sitio ContaPortable :material-web:](https://www.contaportable.com/indice/vip-modulo-contable-reportes-contables/reporte-inventario-y-facturacion/#existencia){ .md-button align=left }**
 
 ---
+
 ### 2.2 Requisiciones
 
 !!! info "Descripción del reporte"
@@ -224,6 +229,7 @@ Vista previa del reporte **![Reporte de movimientos en requisiciones](../../asse
 Puedes encontrar más información en el sitio oficial de **ContaPortable** **[Enlace en sitio ContaPortable :material-web:](https://www.contaportable.com/indice/vip-modulo-contable-reportes-contables/reporte-inventario-y-facturacion/#existencia){ .md-button align=left }**
 
 ---
+
 ### 2.3 Ordenes de compra por proyecto
 
 !!! info "Descripción del reporte"
@@ -470,17 +476,20 @@ Puedes encontrar más información en el sitio oficial de **ContaPortable** **[E
 
         B[4.1 Movimientos de inventario por marca y modelo]
         C[4.2 Movimientos de inventario por marca y modelo - incluye lote y fecha de vencimiento]
+        D[4.3 Detalle de movimientos de Kardex por marca y modelo]
       end
 
       A --> B
       A --> C
+      A --> D
 
     click B "#41-movimientos-de-inventario-por-marca-y-modelo" "Ir a reporte de movimientos de inventario por marca y modelo"
     click C "#42-movimientos-de-inventario-por-marca-y-modelo-incluye-lote-y-fecha-de-vencimiento" "Ir a reporte de movimientos de inventario por marca y modelo (Incluye marca y modelo)"
+    click D "#43-detalle-de-movimientos-de-kardex-por-marca-y-modelo" "Ir a reporte de detalle de movimientos de Kardex por marca y modelo"
     
     ```
 ---
-    
+
 !!! abstract "Filtros por marca y modelo"
     En esta categoría en particular se encuentran añadidos dos contenedores de filtros por marca y modelo, con los cuales se pueden establecer bloques de marcas y modelos para incluir en el reporte.
 
@@ -533,3 +542,24 @@ Vista previa del reporte **![Reporte de movimientos de inventario por marca y mo
     - **[Descargar versión Excel (Plano) :material-microsoft-excel:](../../assets/reportes/inventario/4.2-MOVEMENTS-SUMMARY-BY-BRAND-MODEL-EXPIRE-DATE-REPORT_PLN.xlsx){ .md-button }**
 
 Puedes encontrar más información en el sitio oficial de **ContaPortable** **[Enlace en sitio ContaPortable :material-web:](https://www.contaportable.com/indice/vip-modulo-contable-reportes-contables/reporte-inventario-y-facturacion/#existencia){ .md-button align=left }**
+
+---
+
+### 4.3 Detalle de movimientos de Kardex por marca y modelo
+
+!!! info "Descripción del reporte (INV43)"
+    Este reporte muestra un formato avanzado del kardex, agregando el detalle de los movimientos agrupados por la marca y el modelo de los productos, permitiendo un análisis detallado del flujo del inventario. Puede ser filtrado por medio de los siguientes parámetros:
+
+    - Fecha
+    - Código (Todos o bloques)
+    - Marcas (Todas o bloques)
+    - Modelos (Todos o bloques)
+
+    Es posible exportarlo a formato Excel, ya sea de forma consolidada o detallada (Plano).
+
+Vista previa del reporte **![TODO: Insertar Imagen - Reporte INV43](../../assets/reportes/inventario/4.3-KARDEX-MOVEMENTS-BY-BRAND-MODEL-REPORT.png){ align=left }**
+
+??? abstract "4.3 Reporte de movimientos de Kardex por marca y modelo - Descargas de ejemplo"
+    - **[Descargar versión PDF :fontawesome-regular-file-pdf:](../../assets/reportes/inventario/4.3-KARDEX-MOVEMENTS-BY-BRAND-MODEL-REPORT.PDF){ .md-button }**
+    - **[Descargar versión Excel (Consolidado) :material-microsoft-excel:](../../assets/reportes/inventario/4.3-KARDEX-MOVEMENTS-BY-BRAND-MODEL-REPORT_CON.xlsx){ .md-button }**
+    - **[Descargar versión Excel (Plano) :material-microsoft-excel:](../../assets/reportes/inventario/4.3-KARDEX-MOVEMENTS-BY-BRAND-MODEL-REPORT_PLN.xlsx){ .md-button }**

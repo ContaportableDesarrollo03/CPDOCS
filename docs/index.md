@@ -8,23 +8,24 @@
     - **Conversión:** bin→texto antes de *push*, texto→bin después de *pull*
 
 ## ¿Qué es CP2025?
+
 Software contable y de facturación. El código principal está en Visual FoxPro 9.0; para poder versionar en Git se convierten los binarios (formularios/clases/reportes) a texto con **foxbin2prg**.
 
 ## Formatos de archivos
 
 | Binario (VFP) | Texto (foxbin2prg) | Descripción                                    |
 | --- | --- | --- |
-| `.vcx` | `.vc2` | Clases |
+| `.vcx` | `.vc2` | Contenedor de clases |
 | `.scx` | `.sc2` | Formularios |
-| `.frx` | `.fr2` | Reportes |
 | `.prg` | `.prg` | Código (ya es texto) |
 
 ## Flujo de ramas
+
 - **`DESARROLLO`**: rama principal de trabajo.
 - **`main`**: se usa para publicar **releases** estables.
 
 ### Enlaces útiles
 
-1.  Contaportable.com :  
-        1.  Descarga: https://www.contaportable.com/vip/public/descargas/  
-        2.  Membresía: https://www.contaportable.com/vip/public/login
+1. Contaportable.com :  
+        1.  Descarga: <https://www.contaportable.com/vip/public/descargas/>  
+        2.  Membresía: <https://www.contaportable.com/vip/public/login>
